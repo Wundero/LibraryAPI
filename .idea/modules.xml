@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LibraryAPI.iml" filepath="$PROJECT_DIR$/.idea/modules/LibraryAPI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LibraryAPI_main.iml" filepath="$PROJECT_DIR$/.idea/modules/LibraryAPI_main.iml" group="LibraryAPI" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LibraryAPI_test.iml" filepath="$PROJECT_DIR$/.idea/modules/LibraryAPI_test.iml" group="LibraryAPI" />
+    </modules>
+  </component>
+</project>
