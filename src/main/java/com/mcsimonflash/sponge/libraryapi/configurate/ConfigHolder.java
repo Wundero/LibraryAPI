@@ -13,7 +13,7 @@ import java.io.IOException;
 public class ConfigHolder<T extends ConfigurationNode> {
 
     private final ConfigurationLoader<T> loader;
-    private final T node;
+    private T node;
 
     /**
      * Creates a new instance from an existing {@link ConfigurationLoader<T>}.
@@ -23,7 +23,16 @@ public class ConfigHolder<T extends ConfigurationNode> {
      */
     public ConfigHolder(ConfigurationLoader<T> loader) throws IOException {
         this.loader = loader;
-        this.node = loader.load();
+        load();
+    }
+    
+    /**
+     * Returns the node representing the root configuration.
+     *
+     * @return the root node.
+     */
+    public T getRootNode() {
+        return node;
     }
 
     /**
@@ -53,6 +62,21 @@ public class ConfigHolder<T extends ConfigurationNode> {
             loader.save(node);
             return true;
         } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    /**
+     * Attempts to load the {@link #node} from the {@link #loader}.
+     *
+     * @return whether the load was successful.
+     */
+    public boolean load() {
+        try {
+            this.node = this.loader.load();
+            return true;
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
